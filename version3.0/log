@@ -1,0 +1,52 @@
+Script started on 2016년 12월 01일 (목) 오후 08시 53분 05초
+]0;root@zzado: /home/zzado/temp/sys_software/version3.0root@zzado:/home/zzado/temp/sys_software/version3.0# ls
+Makefile  OPTAB  header.h  log  main.c  pass1.c  pass2.c  test.sic
+]0;root@zzado: /home/zzado/temp/sys_software/version3.0root@zzado:/home/zzado/temp/sys_software/version3.0# make
+gcc -c main.c
+gcc -c pass1.c
+gcc -c pass2.c
+gcc -o sic main.o pass1.o pass2.o
+]0;root@zzado: /home/zzado/temp/sys_software/version3.0root@zzado:/home/zzado/temp/sys_software/version3.0# ls
+Makefile  OPTAB  header.h  log  main.c  main.o  pass1.c  pass1.o  pass2.c  pass2.o  [0m[01;32msic[0m  test.sic
+]0;root@zzado: /home/zzado/temp/sys_software/version3.0root@zzado:/home/zzado/temp/sys_software/version3.0# make clean
+rm main.o pass1.o pass2.o
+]0;root@zzado: /home/zzado/temp/sys_software/version3.0root@zzado:/home/zzado/temp/sys_software/version3.0# ls
+Makefile  OPTAB  header.h  log  main.c  pass1.c  pass2.c  [0m[01;32msic[0m  test.sic
+]0;root@zzado: /home/zzado/temp/sys_software/version3.0root@zzado:/home/zzado/temp/sys_software/version3.0# ./i[Ksic -hl[Kelp
+Help
+-obj [input_file] : Make ObjectProgram of input file
+-obj [input_file] -canary : Set canary bit to buffer and add subroutin for check
+-obj [input_file] -table : Do not delete PASS1's TABLE
+-help : show useage and option
+]0;root@zzado: /home/zzado/temp/sys_software/version3.0root@zzado:/home/zzado/temp/sys_software/version3.0# sic[K[K[K./sic -obj test.sic
+]0;root@zzado: /home/zzado/temp/sys_software/version3.0root@zzado:/home/zzado/temp/sys_software/version3.0# ls
+Makefile  OPTAB  header.h  log  main.c  pass1.c  pass2.c  [0m[01;32msic[0m  test  test.sic
+]0;root@zzado: /home/zzado/temp/sys_software/version3.0root@zzado:/home/zzado/temp/sys_software/version3.0# cat test
+H COPY   001000 00107A
+T 001000 1E 141033 482039 001036 281030 301015 482061 3C1003 00102A 0C1039 00102D
+T 00101E 15 0C1036 482061 081033 4C0000 454F46 000003 000000
+T 002039 1E 041030 001030 E0205D 30203F D8205D 281030 302057 549039 2C205E 38203F
+T 002057 1C 101036 4C0000 F1 001000 041030 E02079 302064 509039 DC2079 2C1036
+T 002073 07 382064 4C0000 05
+E 001000
+]0;root@zzado: /home/zzado/temp/sys_software/version3.0root@zzado:/home/zzado/temp/sys_software/version3.0# cat testls[K./sic -obj test.sic -table
+]0;root@zzado: /home/zzado/temp/sys_software/version3.0root@zzado:/home/zzado/temp/sys_software/version3.0# ls
+INFO  Makefile  OPTAB  PASS1RESULT  SYMTAB  header.h  log  main.c  pass1.c  pass2.c  [0m[01;32msic[0m  temp  test  test.sic
+]0;root@zzado: /home/zzado/temp/sys_software/version3.0root@zzado:/home/zzado/temp/sys_software/version3.0# ls./sic -obj test.sic -table[K[K[K[K[Kf[Kcan[Ka[Knaa[Kry
+]0;root@zzado: /home/zzado/temp/sys_software/version3.0root@zzado:/home/zzado/temp/sys_software/version3.0# ls
+Makefile  OPTAB  header.h  log  main.c  pass1.c  pass2.c  [0m[01;32msic[0m  test  test.sic
+]0;root@zzado: /home/zzado/temp/sys_software/version3.0root@zzado:/home/zzado/temp/sys_software/version3.0# cat test
+H COPY   001000 0010AD
+T 001000 1E 141033 482042 001039 281030 301015 48206A 3C1003 00102A 0C103F 00102D
+T 00101E 15 0C1039 48206A 081033 4C0000 454F46 000003 000000
+T 001036 03 003039
+T 00103C 03 003039
+T 00203F 1E 003039 041030 001030 E02066 302048 D82066 281030 302060 54903F 2C2067
+T 00205D 1C 382048 101039 4C0000 F1 001000 041030 E02082 30206D 50903F DC2082
+T 002079 1C 2C1039 38206D 4C0000 05 003039 001036 282083 302092 FF0000 00103C
+T 002095 18 282083 30209E FF0000 00203F 282083 3020AA FF0000 002083
+E 001000
+]0;root@zzado: /home/zzado/temp/sys_software/version3.0root@zzado:/home/zzado/temp/sys_software/version3.0# exit
+exit
+
+Script done on 2016년 12월 01일 (목) 오후 08시 54분 16초
